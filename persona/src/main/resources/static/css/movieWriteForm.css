@@ -1,0 +1,57 @@
+.addMovieMain {
+    margin-top: 200px;
+    margin-left: 30%;
+    margin-bottom: 50px;
+    display: flex;
+    
+}
+.addMovieMain tr th,
+.addMovieMain tr td select,
+.addMovieMain tr td input{
+    font-size: 30px;
+    width: 400px;
+}
+.addMovieMain tr th {
+    text-align: justify;
+}
+.addMovieMain tr .left {
+	display: flex;
+	flex-direction: column;
+}
+.addMovieMain tr .left {
+	float: left;
+}
+.addMovieMain tr .left input {
+	min-width: 150px;
+	font-size: 15px;
+	
+}
+.addMovieMain tr th::after {
+    content: "";
+    display: block;
+    width: 30%;
+    border-bottom: 1px solid #000;
+    margin-bottom: 55px;
+}
+.addMovieMain tr td {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.btns {
+    margin-left: 50%;
+    margin-bottom: 10%;
+    
+}
+.btns input {
+    font-size: 30px;
+    padding: 10px 50px;   
+    color: #e0e0e0;
+    background: #212121;
+    cursor: pointer;
+}
+td.borderBottom {
+    display: flex;
+    flex-direction: column-reverse;
+}
