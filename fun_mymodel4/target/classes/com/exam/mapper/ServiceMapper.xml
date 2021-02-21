@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.ServiceMapper">
+
+	<update id="updateReSeq">
+		<![CDATA[
+		UPDATE web.service 
+		SET re_seq = re_seq + 1 
+		WHERE re_ref = #{reRef} 
+		AND re_seq > #{reSeq} 
+		]]>
+	</update>
+	
+	
+	<select id="getCountBySearch" resultType="int">
+		SELECT COUNT(*) 
+		FROM web.service 
+		<if test="category == 'subject'">
+			WHERE subject LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'content'">
+			WHERE content LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'id'">
+			WHERE id LIKE CONCAT('%', #{search}, '%') 
+		</if>
+	</select>
+	
+	
+	<select id="getServicesBySearch" resultType="serviceVo">
+		SELECT * 
+		FROM web.service 
+		<if test="category == 'subject'">
+			WHERE subject LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'content'">
+			WHERE content LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'id'">
+			WHERE id LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		ORDER BY re_ref DESC, re_seq ASC 
+		LIMIT #{startRow}, #{pageSize} 
+	</select>
+	
+	
+	
+	<select id="getServiceAndAttaches" resultMap="serviceAndAttaches">
+		SELECT n.num, n.id, n.subject, n.content, n.readcount, n.reg_date, n.ip,
+		       n.re_ref, n.re_lev, n.re_seq,
+		       a.num as anum, a.filename, a.uploadpath, a.image, a.no_num
+		FROM web.bnotice n LEFT OUTER JOIN web.battach a
+		ON n.num = a.no_num
+		where n.num = #{num}
+	</select>
+	<resultMap id="serviceAndAttaches" type="serviceVo">
+		<!-- property 속성은 setter 메소드 이름을 의미함! -->
+		<id column="num" property="num"/>
+		<result column="id" property="id"/>
+		<result column="subject" property="subject"/>
+		<result column="content" property="content"/>
+		<result column="readcount" property="readcount"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="ip" property="ip"/>
+		<result column="re_ref" property="reRef"/>
+		<result column="re_lev" property="reLev"/>
+		<result column="re_seq" property="reSeq"/>
+		<collection property="serviceAttachList" ofType="serviceAttachVo">
+			<id column="anum" property="num"/>
+			<result column="filename" property="filename"/>
+			<result column="uploadpath" property="uploadpath"/>
+			<result column="image" property="image"/>
+			<result column="no_num" property="noNum"/>
+		</collection>
+	</resultMap>
+</mapper>
+
+
+

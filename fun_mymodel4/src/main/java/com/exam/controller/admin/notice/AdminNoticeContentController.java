@@ -1,0 +1,70 @@
+package com.exam.controller.admin.notice;
+
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.json.simple.JSONArray;
+import com.exam.controller.Controller;
+import com.exam.dao.AttachMyBatisDao;
+import com.exam.dao.CommentMyBatisDao;
+import com.exam.dao.FileMyBatisDao;
+import com.exam.dao.NoticeAttachMyBatisDao;
+import com.exam.dao.NoticeMyBatisDao;
+import com.exam.vo.AttachVo;
+import com.exam.vo.FileVo;
+import com.exam.vo.NoticeAttachVo;
+import com.exam.vo.NoticeVo;
+
+public class AdminNoticeContentController implements Controller {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("AdminNoticeContentController......");
+		
+		// 파라미터값  num  pageNum  가져오기
+		int num = Integer.parseInt(request.getParameter("num"));
+		String pageNum = request.getParameter("pageNum");
+		
+		// DAO 객체 준비
+		NoticeMyBatisDao noticeDao = NoticeMyBatisDao.getInstance();
+		NoticeAttachMyBatisDao attachDao = NoticeAttachMyBatisDao.getInstance();
+
+		// 조회수 1 증가
+		noticeDao.updateReadcount(num);
+		
+//		// 코멘트 수
+//		int comments= commentDao.getCommentsNum(num);
+
+		// 글 한개 가져오기
+		NoticeVo noticeVo = noticeDao.getNoticeByNum(num);
+		// 첨부파일 리스트 정보 가져오기
+		List<NoticeAttachVo> noticeAttachList = attachDao.getAttachesByNoNum(num);
+
+
+		// 글 내용에서 "\n" 줄바꿈 문자열을 "<br>"로 교체하기
+		String content = "";
+		if (noticeVo.getContent() != null) {
+			content = noticeVo.getContent().replace("\n", "<br>");
+			noticeVo.setContent(content);
+		}	
+		
+//		// 댓글 목록
+//		ArrayList<CommentVo> commentList = noticeDao.getComment(num);
+//		//댓글이 한개라도 있으면 request에 commentList를 세팅
+//		if(commentList.size() > 0) {
+//			request.setAttribute("commentList", commentList);
+//		}
+		
+		JSONArray jsonArray = (JSONArray) request.getAttribute("jsonArray");
+		
+		// 뷰(jsp)에서 필요한 데이터를 request 영역객체에 저장
+		request.setAttribute("noticeVo", noticeVo);
+		request.setAttribute("noticeAttachList", noticeAttachList);
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("jsonArray", jsonArray);
+//		request.setAttribute("comments", comments);
+		
+		return "admin/noticeContent";
+	}
+
+}

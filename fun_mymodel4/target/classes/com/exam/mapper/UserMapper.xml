@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.UserMapper">
+
+	<delete id="deleteByUserId">
+		DELETE FROM web.user
+		WHERE user_id IN
+		<foreach collection="checkArray" item="check" open="(" separator="," close=")">
+			#{check}
+		</foreach>
+	</delete>
+
+	<select id="getUsersBySearch" resultType="userVo">
+		SELECT * 
+		FROM web.user
+		<if test="category == 'id'">
+			WHERE id LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'name'">
+			WHERE name LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'tel'">
+			WHERE tel LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		ORDER BY user_id DESC 
+		LIMIT #{startRow}, #{pageSize} 
+	</select>
+
+	<!-- 이렇게 *로 가져올땐 중복 이름의 값 없는지 잘 확인 -->	
+	<select id="getHavesBySearch" resultMap="UserVoAndHaveVo">
+		SELECT * 
+		FROM web.user u LEFT OUTER JOIN web.have h
+		ON u.user_id = h.u_num
+		<if test="category == 'id'">
+			WHERE u.id LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'name'">
+			WHERE u.name LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'tel'">
+			WHERE u.tel LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		ORDER BY u.user_id DESC
+		LIMIT #{startRow}, #{pageSize} 
+	</select>
+	<resultMap id="UserVoAndHaveVo" type="userVo">
+	<!-- property 속성은 setter 메소드 이름을 의미함! -->
+		<id column="user_id" property="userId"/>
+		<result column="id" property="id"/>
+		<result column="pwd" property="pwd"/>
+		<result column="name" property="name"/>
+		<result column="age" property="age"/>
+		<result column="gender" property="gender"/>
+		<result column="email" property="email"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="birth_day" property="birthDay"/>
+		<result column="address" property="address"/>
+		<result column="tel" property="tel"/>
+		<association property="haveVo" javaType="haveVo">
+			<id column="h_num" property="hNum"/>
+			<result column="level" property="level"/>
+			<result column="point" property="point"/>
+			<result column="u_num" property="uNum"/>
+		</association>
+	</resultMap>
+	<!-- property가 setter javaType는 vo
+		 property가 호명할 이름이고 column이 테이블속 컬럼명 -->
+	
+	<select id="getCountBySearch" resultType="int">
+		SELECT COUNT(*) 
+		FROM web.user 
+		<if test="category == 'subject'">
+			WHERE subject LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'content'">
+			WHERE content LIKE CONCAT('%', #{search}, '%') 
+		</if>
+		<if test="category == 'id'">
+			WHERE id LIKE CONCAT('%', #{search}, '%') 
+		</if>
+	</select>
+	
+<!-- 	<delete id="deleteByUserId"> -->
+<!-- 		DELETE *  -->
+<!-- 		FROM web.user -->
+<!-- 		WHERE user_id in #{userArray}  -->
+<!-- 	</delete> -->
+</mapper>
+
+
+
