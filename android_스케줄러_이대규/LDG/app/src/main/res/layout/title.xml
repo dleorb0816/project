@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#25A7DE"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="0.1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="님 안녕하세요. 반갑습니다!"/>
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/titleIv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/note1"/>
+
+    <Button
+        android:id="@+id/btn_schedule"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_custom_button3"
+        android:text="스케줄러"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_map"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_custom_button3"
+        android:text="식당탐지기"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_board"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_custom_button3"
+        android:text="이모저모"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_mail"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_custom_button3"
+        android:text="문의 및 건의"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+
+
+</LinearLayout>

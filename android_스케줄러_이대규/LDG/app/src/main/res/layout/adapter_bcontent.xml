@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <TableLayout
+        android:id="@+id/tbl1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_reg1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="num" />
+
+            <TextView
+                android:id="@+id/tv_write_time1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="writetime" />
+
+            <TextView
+                android:id="@+id/tv_content1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="content" />
+
+            <TextView
+                android:id="@+id/tv_id1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="id" />
+
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbl1">
+
+        <Button
+            android:background="#00ff0000"
+            android:id="@+id/btn_delete1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/medium"
+            android:text="삭제"
+            android:textSize="10dp"/>
+
+        <Button
+            android:background="#00ff0000"
+            android:id="@+id/btnUpdate1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_toLeftOf="@+id/btn_delete1"
+            android:fontFamily="@font/medium"
+            android:text="수정"
+            android:textSize="10dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>

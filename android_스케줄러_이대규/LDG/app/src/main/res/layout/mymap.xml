@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/layout_main"
+    android:orientation="vertical"
+    android:background="#D4F7C9"
+    >
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="근처 식당을 찾아봅시다!"
+        android:fontFamily="@font/medium"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#324c42"
+        android:background="@null"/>
+
+    <fragment
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <Button
+        android:layout_gravity="center"
+        android:text="CLICK!!"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:textSize="30dp"
+        android:textColor="#324c42"
+        android:textStyle="bold|italic"
+        android:fontFamily="@font/medium"
+        android:background="#D4F7C9"
+        android:id="@+id/button"/>
+
+
+</LinearLayout>

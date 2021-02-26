@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#D9D9D9">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:src="@drawable/mailpage"/>
+
+        <TextView
+            android:fontFamily="@font/medium"
+            android:id="@+id/btnemail"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="문의 하기"
+            android:textStyle="italic"
+            android:textColor="#226DA6"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+</LinearLayout>

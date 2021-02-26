@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@drawable/paper"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:text="TIME :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="TIME"
+            android:id="@+id/edtTime"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:paddingLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:text="CONT :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="CONTENT"
+            android:id="@+id/edtContent"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:paddingLeft="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:text="ID :"/>
+
+        <EditText
+            android:id="@+id/edtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:fontFamily="@font/medium"
+            android:textColor="#6C4534"
+            android:hint="ID"
+            android:paddingLeft="5dp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_custom_button7"
+            android:fontFamily="@font/medium"
+            android:text="작성하기"
+            android:textColor="#6C4534"
+            android:textSize="20dp" />
+    </LinearLayout>
+</LinearLayout>

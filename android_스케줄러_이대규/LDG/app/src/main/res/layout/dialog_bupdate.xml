@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:text="REG :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="REG"
+            android:id="@+id/edtReg1"
+            android:paddingLeft="5dp"/>
+
+    </LinearLayout>
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="57dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="right|center_vertical"-->
+<!--            android:text="TIME :"/>-->
+
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="left|center_vertical"-->
+<!--            android:hint="TIME"-->
+<!--            android:id="@+id/edtTime"-->
+<!--            android:paddingLeft="5dp"/>-->
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:text="CONT :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="CONTENT"
+            android:id="@+id/edtContent1"
+            android:paddingLeft="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:text="ID :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="ID"
+            android:id="@+id/edtId1"
+            android:paddingLeft="5dp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

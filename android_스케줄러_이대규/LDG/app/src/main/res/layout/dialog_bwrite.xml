@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@drawable/papersecond"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/medium"
+            android:text="CONT :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="CONTENT"
+            android:id="@+id/edtContent1"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/medium"
+            android:paddingLeft="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/medium"
+            android:text="ID :"/>
+
+        <EditText
+            android:id="@+id/edtId1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:hint="ID"
+            android:textColor="#5C5C5C"
+            android:fontFamily="@font/medium"
+            android:paddingLeft="5dp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="작성하기"
+            android:fontFamily="@font/medium"
+            android:textColor="#5C5C5C"
+            android:background="@drawable/bg_custom_button6"
+            />
+    </LinearLayout>
+</LinearLayout>
