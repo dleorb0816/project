@@ -32,9 +32,12 @@ public class MemberService {
 		//패스워드 확인
 		String dbPw = memberMapper.userCheck(id);
 
+		log.info("dbPw : " +dbPw);
+		log.info("pw : " + pw);
+
 		//패스워드가 있을때
 		if(dbPw != null) {
-			if(dbPw == pw) { //입력받은 패스워드와 조회된 패스워드랑 같을때
+			if(pw.equals(dbPw)) { //입력받은 패스워드와 조회된 패스워드랑 같을때
 				check = 1;
 			}else {	//입력받은 패스워드와 조회된 패스워드랑 다를때
 				check = 0;

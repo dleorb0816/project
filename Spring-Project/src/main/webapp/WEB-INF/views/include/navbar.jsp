@@ -32,18 +32,53 @@
 
 		<nav role="navigation">
 			<ul id="main-menu">
-				<li><a href="#">MENU1</a></li>
-				<li><a href="#">Menu2</a>
+				<li><a href="#">도서관이용</a>
+				<ul id="sub-menu">
+						<li><a href="">이용시간/휴관일</a></li>
+						<li><a href="">대출/반납/예약안내</a></li>
+						<li><a href="">도서관이용안내</a></li>
+						<li><a href="">영장정보처리방침</a></li>
+					</ul>
+				</li>
+				<li><a href="#">도서관서비스</a>
 					<ul id="sub-menu">
-						<li><a href="">submenu</a></li>
-						<li><a href="">submenu</a></li>
-						<li><a href="">submenu</a></li>
-						<li><a href="">submenu</a></li>
-					</ul></li>
-				<li><a href="#">MENU3</a></li>
-				<li><a href="#">MENU4</a></li>
-				<li><a href="#">MENU5</a></li>
-				<li><a href="#">MENU6</a></li>
+						<li><a href="">책이음서비스</a></li>
+						<li><a href="">타관대출반납</a></li>
+						<li><a href="">책바다</a></li>
+						<li><a href="">다자녀더책서비스</a></li>
+					</ul>
+				</li>
+				<li><a href="#">자료실소개</a>
+					<ul id="sub-menu">
+						<li><a href="">종합자료실/연속간행물실</a></li>
+						<li><a href="">유아/어린이자료실</a></li>
+						<li><a href="">디지털자료실</a></li>
+						<li><a href="">자율학습실</a></li>
+					</ul>
+				</li>
+				<li><a href="#">자료찾기</a>
+					<ul id="sub-menu">
+						<li><a href="">자료검색/예약</a></li>
+						<li><a href="">도서대출베스트</a></li>
+						<li><a href="">신작도서</a></li>
+						<li><a href="">연속간행물실검색</a></li>
+					</ul>
+				</li>
+				<li><a href="#">문화행사</a>
+					<ul id="sub-menu">
+						<li><a href="">도서관주관</a></li>
+						<li><a href="">독서의달</a></li>
+						<li><a href="">독서교실</a></li>
+						<li><a href="">문학강좌안내</a></li>
+					</ul>
+				</li>
+				<li><a href="#">도서관소개</a>
+					<ul id="sub-menu">
+						<li><a href="">조직/업무안내</a></li>
+						<li><a href="">시설/자료현황</a></li>
+						<li><a href="">찾아오시는 길</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 

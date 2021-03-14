@@ -80,12 +80,13 @@ public class MemberController {
 			HttpSession session,HttpServletResponse response) {
 
 		log.info("post login");
+		log.info("pw: " + pw);
 
 		int check = memberService.userCheck(id, pw);
 		log.info("check : " + check);
 
 		//로그인 실패시
-		if(check != -1) {
+		if(check != 1) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 
