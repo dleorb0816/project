@@ -79,6 +79,10 @@
 						<li><a href="">찾아오시는 길</a></li>
 					</ul>
 				</li>
+				<c:set var = "id" value="${id }"/>
+				<c:if test="${id == \"admin\" }">
+					<li><a href="">관리자페이지</a></li>
+				</c:if>
 			</ul>
 		</nav>
 

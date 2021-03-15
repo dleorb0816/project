@@ -64,7 +64,7 @@ ul, li {
   visibility: hidden;
   transition: all 0.15s ease-in;
   width:144px;
-
+  z-index: 3;
 }
 
 #sub-menu > li {
@@ -109,4 +109,34 @@ ul, li {
 
 .login {
     margin-top: 100px;
+}
+#div1{
+	background-color:#3E3E3E;
+	height:100px;
+	width:130px;
+	z-index: 0;
+	padding:17px;
+}
+#div2{
+	background-color:#1A806F;
+	height:100px;
+	width:130px;
+	z-index: 0;
+	padding:17px;
+}
+#a1{
+	color:white;
+	font-weight: 3;
+	font-size: 18px;
+	text-align: center;
+	font-family: sans-serif;
+
+	margin-top:20px;
+}
+
+#a1:link{
+	color:white;
+}
+#a1:visited{
+	color:white;
 }
